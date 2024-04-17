@@ -16,6 +16,7 @@ export default function Overview() {
             src={uiucBackground}
             alt="University of Illinois at Urbana-Champaign"
           />
+          <button className="panel-button">+</button>
           <p>
             <h3>2024</h3>
             <h1>UIUC</h1>
@@ -23,6 +24,7 @@ export default function Overview() {
         </div>
         <div className="panel" id="accenture">
           <img src={accentureBackground} alt="Accenture" />
+          <button className="panel-button">+</button>
           <p>
             <h3>2023</h3>
             <h1>Accenture</h1>
@@ -33,6 +35,7 @@ export default function Overview() {
             src={lbnlBackground}
             alt="Lawrence Berkeley National Laboratory"
           />
+          <button className="panel-button">+</button>
           <p>
             <h3>2022</h3>
             <h1>Berkeley Lab</h1>
@@ -40,6 +43,7 @@ export default function Overview() {
         </div>
         <div className="panel">
           <img src={nasaBackground} alt="NASA Ames Research Center" />
+          <button className="panel-button">+</button>
           <p>
             <h3>2021</h3>
             <h1>NASA Ames</h1>
