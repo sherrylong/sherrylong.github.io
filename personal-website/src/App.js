@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import portrait from "./assets/portrait-light.png";
+import slLogo from "./assets/sl-logo.png";
 import "./App.css";
 import Overview from "./components/Overview.js";
 
@@ -29,7 +30,7 @@ function App() {
         <div id={isPageTop ? "" : "scrolled"}>
           <div id="link-container">
             <a className="nav-hotlink" href="#home-fullview">
-              Home
+              <img src={slLogo} alt="SL Logo" height="24rem" />
             </a>
             <a className="nav-hotlink" href="#overview">
               Overview
