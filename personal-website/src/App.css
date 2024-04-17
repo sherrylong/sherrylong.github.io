@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#nav {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#nav > #scrolled {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0.7;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#link-container {
+  padding-left: 1.5rem;
+}
+
+.nav-hotlink {
+  color: black;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#home {
+  display: flex;
+  align-items: last baseline;
+  position: relative;
+  height: 100%;
+}
+
+#home > img {
+  z-index: 1;
+  position: relative;
+  width: 100vw;
+}
+
+#home-fullview {
+  height: 100vh;
+}
+
+#portrait-overlay {
+  z-index: 2;
+  position: absolute;
+  color: black;
+  font-size: 350%;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  line-height: 3rem;
+}
+
+#portrait-overlay > h1 {
+  font-size: 220%;
+  line-height: 1.2rem;
+}
+
+#autoscroll-anchor {
+  position: absolute;
+  bottom: 0;
+}
+
+#overview {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: baseline;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+#overview > .title {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  font-size: 150%;
+  width: 100%;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 0.8rem;
+  padding-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#panel-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.panel {
+  display: flex;
+  width: 20rem;
+  height: 35rem;
+  background-color: white;
+  border-radius: 20px;
+  margin: 0.5rem;
+  /* padding: 2rem; */
+  overflow: hidden;
+}
+
+.panel > img {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  filter: brightness(80%);
+}
+
+.panel > p {
+  position: absolute;
+  padding-left: 1rem;
+  color: white;
+  line-height: 1rem;
+}
+
+#research {
+  height: 100vh;
+}
+
+#research > .title {
+  color: black;
+}
+
+.modal-button {
+  position: absolute;
 }
