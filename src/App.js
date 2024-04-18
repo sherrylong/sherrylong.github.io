@@ -35,9 +35,9 @@ function App() {
             <a className="nav-hotlink" href="#overview">
               Overview
             </a>
-            <a className="nav-hotlink" href="#research">
+            {/* <a className="nav-hotlink" href="#research">
               Research
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
@@ -48,17 +48,20 @@ function App() {
           <h1>Long</h1>
           Software Engineer
         </div>
+        <a id="discover" href="#overview">
+          Discover →
+        </a>
         <img src={portrait} alt="Portrait" />
         <div id="autoscroll-anchor" ref={pageEnd} />
       </div>
 
       <Overview />
 
-      <div id="research">
+      {/* <div id="research">
         <div className="title">
           <h1>Research</h1>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
