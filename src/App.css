@@ -45,6 +45,9 @@ html {
 
 #portrait {
   z-index: 1;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 50% 100%;
   position: relative;
   width: 100%;
 }
@@ -60,7 +63,7 @@ html {
   font-size: 350%;
   margin-bottom: 3.5rem;
   margin-left: 2rem;
-  width: 40%;
+  width: 28%;
 }
 
 #portrait-overlay > h1 {
@@ -210,13 +213,14 @@ html {
   color: black;
 }
 
-@media only screen and (max-device-width: 1000px) {
+@media only screen and (max-width: 1200px) {
   #panel-container {
     align-items: center;
     flex-direction: column;
   }
   .panel {
     height: 15rem;
+    width: 80%;
   }
 
   .title {

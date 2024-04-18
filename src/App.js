@@ -15,11 +15,11 @@ function App() {
       }
     };
 
-    setTimeout(() => {
-      if (pageEnd.current) {
-        pageEnd.current.scrollIntoView({ behavior: "smooth", block: "end" });
-      }
-    }, 800);
+    // setTimeout(() => {
+    //   if (pageEnd.current) {
+    //     pageEnd.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    //   }
+    // }, 800);
 
     window.addEventListener("scroll", checkIfTop);
   }, []);
