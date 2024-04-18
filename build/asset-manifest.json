@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a4e424a4.css",
+    "main.js": "/static/js/main.a3649758.js",
+    "static/js/453.253ccfac.chunk.js": "/static/js/453.253ccfac.chunk.js",
+    "static/media/portrait-light.png": "/static/media/portrait-light.3e1e42b0aad4ec55d51e.png",
+    "static/media/accenture-background.jpeg": "/static/media/accenture-background.d75d3a87ed4f7d31e50e.jpeg",
+    "static/media/uiuc-background.jpeg": "/static/media/uiuc-background.581fae1583526d73c610.jpeg",
+    "static/media/lbnl-background.jpeg": "/static/media/lbnl-background.fb9c933b68b41bccaa27.jpeg",
+    "static/media/nasa-background.webp": "/static/media/nasa-background.1e10f56605bf03a96029.webp",
+    "static/media/sl-logo.png": "/static/media/sl-logo.8b79972963df729c9991.png",
+    "index.html": "/index.html",
+    "main.a4e424a4.css.map": "/static/css/main.a4e424a4.css.map",
+    "main.a3649758.js.map": "/static/js/main.a3649758.js.map",
+    "453.253ccfac.chunk.js.map": "/static/js/453.253ccfac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4e424a4.css",
+    "static/js/main.a3649758.js"
+  ]
+}
