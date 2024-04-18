@@ -52,10 +52,6 @@ html {
   width: 100%;
 }
 
-#home-fullview {
-  height: 100vh;
-}
-
 #portrait-overlay {
   z-index: 2;
   position: absolute;
@@ -252,13 +248,8 @@ html {
     padding: 0.5rem 1.2rem;
   }
 
-  #home-fullview {
-    height: 100%;
-  }
-
   #portrait {
     object-fit: cover;
     height: 30rem;
-    object-position: 30% 70%;
   }
 }

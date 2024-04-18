@@ -29,7 +29,7 @@ function App() {
       <div id="nav">
         <div id={isPageTop ? "" : "scrolled"}>
           <div id="link-container">
-            <a className="nav-hotlink" href="#home-fullview">
+            <a className="nav-hotlink" href="#home">
               <img src={slLogo} alt="SL Logo" height="24rem" />
             </a>
             <a className="nav-hotlink" href="#overview">
