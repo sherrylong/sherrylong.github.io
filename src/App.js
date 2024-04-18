@@ -44,14 +44,13 @@ function App() {
       <div id="home">
         <div id="home-fullview" />
         <div id="portrait-overlay">
-          <h1>Sherry</h1>
-          <h1>Long</h1>
-          Software Engineer
+          <h1>Sherry Long</h1>
+          <p>Software Engineer</p>
         </div>
         <a id="discover" href="#overview">
           Discover →
         </a>
-        <img src={portrait} alt="Portrait" />
+        <img id="portrait" src={portrait} alt="Portrait" />
         <div id="autoscroll-anchor" ref={pageEnd} />
       </div>
 

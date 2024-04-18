@@ -26,12 +26,12 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }
 
 .nav-hotlink {
   color: black;
-  padding: 1rem;
+  padding-right: 2rem;
   text-decoration: none;
   font-weight: 500;
 }
@@ -43,10 +43,10 @@ html {
   height: 100%;
 }
 
-#home > img {
+#portrait {
   z-index: 1;
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 
 #home-fullview {
@@ -58,14 +58,20 @@ html {
   position: absolute;
   color: black;
   font-size: 350%;
-  margin-bottom: 8rem;
+  margin-bottom: 3.5rem;
   margin-left: 2rem;
-  line-height: 1.3rem;
+  width: 40%;
 }
 
 #portrait-overlay > h1 {
-  font-size: 220%;
-  line-height: 1.1rem;
+  font-size: 7.8rem;
+  line-height: 6rem;
+  margin-bottom: 1rem;
+}
+
+#portrait-overlay > p {
+  font-size: 3.5rem;
+  margin-top: 1.3rem;
 }
 
 #discover {
@@ -111,6 +117,7 @@ html {
   align-items: center;
   line-height: 0.8rem;
   padding-bottom: 2rem;
+  text-align: center;
 }
 
 #panel-container {
@@ -201,4 +208,53 @@ html {
 
 #research > .title {
   color: black;
+}
+
+@media only screen and (max-device-width: 1000px) {
+  #panel-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .panel {
+    height: 15rem;
+  }
+
+  .title {
+    align-items: center;
+    line-height: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  #home {
+    align-items: baseline;
+  }
+
+  #portrait-overlay {
+    margin-top: 1rem;
+  }
+
+  #portrait-overlay > h1 {
+    font-size: 4.8rem;
+    line-height: 4.2rem;
+  }
+
+  #portrait-overlay > p {
+    font-size: 2rem;
+  }
+
+  #discover {
+    bottom: 0rem;
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  #home-fullview {
+    height: 100%;
+  }
+
+  #portrait {
+    object-fit: cover;
+    height: 30rem;
+    object-position: 30% 70%;
+  }
 }
