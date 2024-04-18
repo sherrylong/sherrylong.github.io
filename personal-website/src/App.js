@@ -1,10 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import portrait from "./assets/portrait-light.png";
-import uiucBackground from "./assets/uiuc-background.jpeg";
-import accentureBackground from "./assets/accenture-background.jpeg";
-import lbnlBackground from "./assets/lbnl-background.jpeg";
-import nasaBackground from "./assets/nasa-background.webp";
+import slLogo from "./assets/sl-logo.png";
 import "./App.css";
+import Overview from "./components/Overview.js";
 
 function App() {
   const pageEnd = useRef(null);
@@ -32,7 +30,7 @@ function App() {
         <div id={isPageTop ? "" : "scrolled"}>
           <div id="link-container">
             <a className="nav-hotlink" href="#home-fullview">
-              Home
+              <img src={slLogo} alt="SL Logo" height="24rem" />
             </a>
             <a className="nav-hotlink" href="#overview">
               Overview
@@ -54,48 +52,7 @@ function App() {
         <div id="autoscroll-anchor" ref={pageEnd} />
       </div>
 
-      <div id="overview">
-        <div className="title">
-          <h1>Overview</h1>
-          Internships, research, professional experiences
-        </div>
-        <div id="panel-container">
-          <div className="panel">
-            <img
-              src={uiucBackground}
-              alt="University of Illinois at Urbana-Champaign"
-            />
-            <p>
-              <h3>2024</h3>
-              <h1>UIUC</h1>
-            </p>
-          </div>
-          <div className="panel" id="accenture">
-            <img src={accentureBackground} alt="Accenture" />
-            <p>
-              <h3>2023</h3>
-              <h1>Accenture</h1>
-            </p>
-          </div>
-          <div className="panel">
-            <img
-              src={lbnlBackground}
-              alt="Lawrence Berkeley National Laboratory"
-            />
-            <p>
-              <h3>2022</h3>
-              <h1>Berkeley Lab</h1>
-            </p>
-          </div>
-          <div className="panel">
-            <img src={nasaBackground} alt="NASA Ames Research Center" />
-            <p>
-              <h3>2021</h3>
-              <h1>NASA Ames</h1>
-            </p>
-          </div>
-        </div>
-      </div>
+      <Overview />
 
       <div id="research">
         <div className="title">

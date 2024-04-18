@@ -23,12 +23,15 @@ html {
 }
 
 #link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   padding-left: 1.5rem;
 }
 
 .nav-hotlink {
   color: black;
-  padding: 0.5rem;
+  padding: 1rem;
   text-decoration: none;
   font-weight: 500;
 }
@@ -105,12 +108,12 @@ html {
 
 .panel {
   display: flex;
+  position: relative;
   width: 20rem;
   height: 35rem;
   background-color: white;
   border-radius: 20px;
   margin: 0.5rem;
-  /* padding: 2rem; */
   overflow: hidden;
 }
 
@@ -129,14 +132,24 @@ html {
   line-height: 1rem;
 }
 
+.panel-button {
+  position: absolute;
+  background-color: black;
+  opacity: 0.6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  height: 2.3rem;
+  width: 2.3rem;
+  right: 1rem;
+  top: 1rem;
+  font-size: 180%;
+}
+
 #research {
   height: 100vh;
 }
 
 #research > .title {
   color: black;
-}
-
-.modal-button {
-  position: absolute;
 }
