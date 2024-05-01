@@ -3,6 +3,7 @@ import portrait from "./assets/portrait-light.png";
 import slLogo from "./assets/sl-logo.png";
 import "./App.css";
 import Overview from "./components/Overview.js";
+import Research from "./components/Research.js";
 
 function App() {
   const pageEnd = useRef(null);
@@ -35,9 +36,9 @@ function App() {
             <a className="nav-hotlink" href="#overview">
               Overview
             </a>
-            {/* <a className="nav-hotlink" href="#research">
+            <a className="nav-hotlink" href="#research">
               Research
-            </a> */}
+            </a>
           </div>
         </div>
       </div>
@@ -55,12 +56,7 @@ function App() {
       </div>
 
       <Overview />
-
-      {/* <div id="research">
-        <div className="title">
-          <h1>Research</h1>
-        </div>
-      </div> */}
+      <Research />
     </div>
   );
 }
