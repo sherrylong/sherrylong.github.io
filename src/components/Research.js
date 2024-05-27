@@ -30,9 +30,8 @@ export default function Research() {
     },
   ];
 
-  // const handleToggle = (id) => setToggle(id);
   const handleToggle = (id) => {
-    setToggle((prev) => (prev === id ? null : id));
+    setToggle(id);
   };
 
   return (
@@ -41,16 +40,10 @@ export default function Research() {
         <h1>Research</h1>
       </div>
       <div id="research-body">
-        <div id="diagram">
-          <img
-            src={descriptions[toggle].diagram}
-            alt="Research Pipeline Diagram"
-          />
-        </div>
         <div id="toggle-area">
           {descriptions.map((item) => (
             <div key={item.id} className="toggle-container">
-              <div className="toggle">
+              {/* <div className="toggle">
                 <input
                   type="radio"
                   id={item.id}
@@ -58,16 +51,21 @@ export default function Research() {
                   onChange={() => handleToggle(item.id)}
                   disabled={toggle === item.id}
                 />
-                <label for={item.id} className="radio-button">
+                <label
+                  for={item.id}
+                  className="radio-button"
+                  onMouseEnter={() => handleToggle(item.id)}
+                >
                   <img
                     src={toggle === item.id ? arrowDown : arrowRight}
                     height="20rem"
                     alt="Arrow Icon"
                   />
                 </label>
-              </div>
+              </div> */}
               <div className="research-text">
                 <div
+                  onMouseEnter={() => handleToggle(item.id)}
                   className={`research-title ${
                     toggle === item.id ? "active" : ""
                   }`}
@@ -84,6 +82,12 @@ export default function Research() {
               </div>
             </div>
           ))}
+        </div>
+        <div id="diagram">
+          <img
+            src={descriptions[toggle].diagram}
+            alt="Research Pipeline Diagram"
+          />
         </div>
       </div>
     </div>
