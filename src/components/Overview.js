@@ -8,36 +8,32 @@ import lbnlLogo from "../assets/lbnl-logo.png";
 import nasaBackground from "../assets/nasa-background.webp";
 import nasaLogo from "../assets/nasa-logo.png";
 
-const descriptions = {
-  UIUC: {
-    logo: uiucLogo,
-    alt: "University of Illinois Logo",
-    title: "Data Systems Researcher",
-    description: [
-      "Implemented indexing data structures in C++ and Python to support query algorithms for sequences of interest in metagenomic samples.",
-      "Constructed data compression algorithms to optimize computational efficiency of sequencing coverage estimation.",
-      "Generated synthetic metagenomes for benchmark experiments, yielding coverage estimates within 1.5% error.",
-    ],
+const frontPanel = [
+  {
+    id: 0,
+    company: "UIUC",
+    year: "2024",
+    background: uiucBackground,
   },
-  Accenture: {
-    logo: accentureLogo,
-    alt: "Accenture Logo",
-    title: "Intern @ Accenture",
-    description: "Here is a description of what I did",
+  {
+    id: 1,
+    company: "Accenture",
+    year: "2023",
+    background: accentureBackground,
   },
-  LBNL: {
-    logo: lbnlLogo,
-    alt: "Berkeley Lab Logo",
-    title: "Intern @ LBNL",
-    description: "Here is a description of what I did",
+  {
+    id: 2,
+    company: "Berkeley Lab",
+    year: "2022",
+    background: lbnlBackground,
   },
-  NASA: {
-    logo: nasaLogo,
-    alt: "NASA Logo",
-    title: "Intern @ NASA",
-    description: "Here is a description of what I did",
+  {
+    id: 3,
+    company: "NASA Ames",
+    year: "2021",
+    background: nasaBackground,
   },
-};
+];
 
 export default function Overview() {
   const [currPopup, setCurrPopup] = useState(null);
@@ -85,55 +81,22 @@ export default function Overview() {
       )}
 
       <div id="panel-container">
-        <div className="panel" onClick={() => openPopup("UIUC")}>
-          <img
-            src={uiucBackground}
-            alt="University of Illinois at Urbana-Champaign"
-          />
-          <div className="panel-text">
-            <h3>2024</h3>
-            <h1>UIUC</h1>
-          </div>
-          <button className="panel-button" onClick={() => openPopup("UIUC")}>
-            +
-          </button>
-        </div>
-        <div className="panel" onClick={() => openPopup("Accenture")}>
-          <img src={accentureBackground} alt="Accenture" />
-          <div className="panel-text">
-            <h3>2023</h3>
-            <h1>Accenture</h1>
-          </div>
-          <button
-            className="panel-button"
-            onClick={() => openPopup("Accenture")}
+        {frontPanel.map((item) => (
+          <div
+            key={item.id}
+            className="panel"
+            onClick={() => openPopup(item.id)}
           >
-            +
-          </button>
-        </div>
-        <div className="panel" onClick={() => openPopup("LBNL")}>
-          <img
-            src={lbnlBackground}
-            alt="Lawrence Berkeley National Laboratory"
-          />
-          <div className="panel-text">
-            <h3>2022</h3>
-            <h1>Berkeley Lab</h1>
+            <img src={item.background} alt={item.company} />
+            <div className="panel-text">
+              <h3>{item.year}</h3>
+              <h1>{item.company}</h1>
+            </div>
+            <button className="panel-button" onClick={() => openPopup(item.id)}>
+              +
+            </button>
           </div>
-          <button className="panel-button" onClick={() => openPopup("LBNL")}>
-            +
-          </button>
-        </div>
-        <div className="panel" onClick={() => openPopup("NASA")}>
-          <img src={nasaBackground} alt="NASA Ames Research Center" />
-          <div className="panel-text">
-            <h3>2021</h3>
-            <h1>NASA Ames</h1>
-          </div>
-          <button className="panel-button" onClick={() => openPopup("NASA")}>
-            +
-          </button>
-        </div>
+        ))}
       </div>
     </div>
   );
