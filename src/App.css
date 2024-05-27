@@ -1,5 +1,21 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../public/fonts/HelveticaNeueRoman.otf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../public/fonts/HelveticaNeueBold.otf") format("truetype");
+  font-weight: bold;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+.App {
+  font-family: "Helvetica Neue";
 }
 
 #nav {
@@ -39,44 +55,24 @@ html {
 #home {
   display: flex;
   align-items: last baseline;
+  justify-content: center;
   position: relative;
   height: 100%;
+  width: 100%;
 }
 
 #portrait {
   z-index: 1;
   height: 100vh;
   object-fit: cover;
-  object-position: 50% 100%;
+  object-position: 20% 100%;
   position: relative;
   width: 100%;
-}
-
-#portrait-overlay {
-  z-index: 2;
-  position: absolute;
-  color: black;
-  font-size: 350%;
-  margin-bottom: 3.5rem;
-  margin-left: 2rem;
-  width: 33%;
-}
-
-#portrait-overlay > h1 {
-  font-size: 7.8rem;
-  line-height: 6rem;
-  margin-bottom: 1rem;
-}
-
-#portrait-overlay > p {
-  font-size: 3.5rem;
-  margin-top: 1.3rem;
 }
 
 #discover {
   position: absolute;
   z-index: 3;
-  margin-left: 2rem;
   margin-bottom: 2rem;
   text-decoration: none;
   background-color: black;
@@ -85,7 +81,12 @@ html {
   border-radius: 20px;
   padding: 0.5rem 1.5rem;
   font-weight: bold;
-  font-size: 120%;
+  font-size: 1.3rem;
+}
+
+#discover:hover {
+  color: black;
+  background-color: white;
 }
 
 #autoscroll-anchor {
@@ -107,7 +108,7 @@ html {
 }
 
 .title {
-  font-size: 150%;
+  font-size: 1.6rem;
   width: 100%;
   padding-top: 4rem;
   display: flex;
@@ -173,7 +174,7 @@ html {
   width: 2.3rem;
   right: 1rem;
   top: 1rem;
-  font-size: 180%;
+  font-size: 1.9rem;
 }
 
 .panel-button:hover {
@@ -221,7 +222,7 @@ html {
 #research-body {
   display: flex;
   flex-direction: row;
-  padding-left: 3rem;
+  padding-left: 4rem;
   padding-right: 4rem;
 }
 
@@ -266,37 +267,35 @@ html {
 .research-title.active {
   font-weight: bold;
   color: black;
+  cursor: pointer;
+  transform: scale(1.02);
 }
 
 .research-title {
   display: flex;
   align-items: center;
   color: #a6a6a6;
+  transition: transform 0.5s ease-in-out;
 }
 
 .research-description {
   overflow: hidden;
   max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s, max-height 1s, visibility 0s 1s;
 }
 
 .research-description.show {
-  max-height: fit-content;
+  max-height: 1000px;
   opacity: 1;
-  visibility: visible;
-  transition: opacity 1s, max-height 1s, visibility 0s 0s;
 }
 
 #diagram {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: left;
+  justify-content: right;
   width: 40%;
   height: 28rem;
-  margin-right: 4rem;
+  margin-left: 2rem;
 }
 
 #diagram > img {
@@ -305,13 +304,64 @@ html {
   object-fit: contain;
 }
 
-@media only screen and (max-width: 1200px) {
+#projects {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+}
+
+#projects > .title {
+  color: white;
+}
+
+#projects-body {
+  height: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+#slider-container {
+  display: flex;
+  background-color: white;
+  height: 1rem;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.slider > input {
+  display: none;
+}
+
+.slider > label {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.slider input:checked + label {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+}
+
+@media only screen and (max-width: 1050px) {
   #panel-container {
     align-items: center;
     flex-direction: column;
   }
   .panel {
-    height: 15rem;
+    height: 18rem;
     width: 80%;
   }
 
@@ -319,33 +369,16 @@ html {
     align-items: center;
     line-height: 1.5rem;
     padding-bottom: 2rem;
-  }
-
-  #home {
-    align-items: baseline;
-  }
-
-  #portrait-overlay {
-    margin-top: 1rem;
-  }
-
-  #portrait-overlay > h1 {
-    font-size: 4.8rem;
-    line-height: 4.2rem;
-  }
-
-  #portrait-overlay > p {
-    font-size: 2rem;
-  }
-
-  #discover {
-    bottom: 0rem;
-    font-size: 1rem;
-    padding: 0.5rem 1.2rem;
+    font-size: 1.5rem;
   }
 
   #portrait {
-    object-fit: cover;
-    height: 30rem;
+    object-fit: contain;
+    width: 100vw;
+    height: 100%;
+  }
+
+  #discover {
+    display: none;
   }
 }
