@@ -1,9 +1,10 @@
 import { useRef, useEffect, useState } from "react";
-import portrait from "./assets/portrait-light.png";
+import portrait from "./assets/portrait-text.png";
 import slLogo from "./assets/sl-logo.png";
 import "./App.css";
 import Overview from "./components/Overview.js";
 import Research from "./components/Research.js";
+import Projects from "./components/Projects.js";
 
 function App() {
   const pageEnd = useRef(null);
@@ -36,27 +37,27 @@ function App() {
             <a className="nav-hotlink" href="#overview">
               Overview
             </a>
-            <a className="nav-hotlink" href="#research">
+            {/* <a className="nav-hotlink" href="#research">
               Research
             </a>
+            <a className="nav-hotlink" href="#projects">
+              Projects
+            </a> */}
           </div>
         </div>
       </div>
       <div id="home">
         <div id="home-fullview" />
-        <div id="portrait-overlay">
-          <h1>Sherry Long</h1>
-          <p>Software Engineer</p>
-        </div>
         <a id="discover" href="#overview">
-          Discover →
+          Discover ↓
         </a>
         <img id="portrait" src={portrait} alt="Portrait" />
         <div id="autoscroll-anchor" ref={pageEnd} />
       </div>
 
       <Overview />
-      <Research />
+      {/* <Research />
+      <Projects /> */}
     </div>
   );
 }
