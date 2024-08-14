@@ -9,7 +9,7 @@
 #widget-container {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 30rem;
   margin-left: 3rem;
   padding-top: 1.5rem;
 }

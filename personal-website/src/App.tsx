@@ -15,11 +15,11 @@ function App() {
         <div id="widget-container">
           <DigitalClock />
           <div className="flex gap-3">
-            <Widget title="" width="50%"></Widget>
-            <Widget title="" width="50%"></Widget>
+            <Widget app="" width="50%"></Widget>
+            <Widget app="" width="50%"></Widget>
           </div>
-          <Widget title=""></Widget>
-          <Widget title=""></Widget>
+          <Widget app="weather"></Widget>
+          {/* <Widget app="photos"></Widget> */}
         </div>
         <div className="flex w-full justify-end">
           <div id="hello-message">
