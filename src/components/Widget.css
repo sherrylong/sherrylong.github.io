@@ -1,0 +1,35 @@
+.widget-background {
+  width: 23rem;
+  height: 9rem;
+  background-color: white;
+  border-radius: 18px;
+  margin-top: 0.6rem;
+  box-sizing: border-box;
+}
+
+.carousel-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  color: white;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slide-text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  justify-content: end;
+  backdrop-filter: brightness(75%);
+  color: white;
+}

@@ -1,0 +1,16 @@
+.icon-magnify {
+  transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transform-origin: bottom;
+}
+
+.icon-magnify:hover {
+  transform: scale(1.2);
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.app-icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 10px;
+}
