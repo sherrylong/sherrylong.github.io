@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Wallpaper from "./assets/headshot.png";
 import DigitalClock from "./components/DigitalClock";
 import Widget from "./components/Widget";
@@ -11,11 +10,11 @@ function App() {
       <div className="flex">
         <div id="widget-container">
           <DigitalClock />
-          <div className="flex gap-3">
-            <Widget app="" width="50%"></Widget>
-            <Widget app="" width="50%"></Widget>
+          <div className="flex gap-[1rem]">
+            <Widget app="weather"></Widget>
+            <Widget app="reminder"></Widget>
           </div>
-          <Widget app="weather"></Widget>
+          {/* <Widget app="weather"></Widget> */}
           <Widget app="photos"></Widget>
         </div>
         <div className="flex w-full justify-end">

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./DigitalClock.css";
 
 function DigitalClock() {
   const [time, setTime] = useState(new Date());
@@ -56,9 +55,9 @@ function DigitalClock() {
   }
 
   return (
-    <div id="clock-container">
-      <span id="time">{formatTime()}</span>
-      <span id="date">{formatDate()}</span>
+    <div className="flex flex-col">
+      <span className="text-[3rem] leading-[3.2rem]">{formatTime()}</span>
+      <span>{formatDate()}</span>
     </div>
   );
 }

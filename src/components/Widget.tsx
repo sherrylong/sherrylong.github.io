@@ -6,6 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import Autoplay from "embla-carousel-autoplay";
 import uiucBackground from "../assets/uiuc-background.jpeg";
 import accentureBackground from "../assets/accenture-background.jpeg";
@@ -14,12 +16,12 @@ import nasaBackground from "../assets/nasa-background.png";
 
 interface WidgetProps {
   app: string;
-  width?: string;
 }
 
-const Widget: React.FC<WidgetProps> = ({ app, width }) => {
+const Widget: React.FC<WidgetProps> = ({ app }) => {
   return (
     <div>
+      {app == "reminder" && <Reminder />}
       {app == "weather" && <Weather />}
       {app == "photos" && <Photos />}
     </div>
@@ -29,25 +31,53 @@ export default Widget;
 
 function Weather() {
   return (
-    <div className="widget-background bg-[#4a9cc4] flex p-[1rem]">
-      <div className="w-1/2 h-full flex flex-col justify-between">
+    <div className="widget-background widget-sm bg-gradient-to-b from-[#084d90] from-1% to-[#4e86c0] flex p-[1rem]">
+      <div className="w-full h-full flex flex-col justify-between">
         <div>
           <div className="text-white font-semibold text-left">UIUC</div>
-          <div className="text-white font-thin text-5xl text-left -ml-1">
+          <div className="text-white font-thin text-4xl text-left -ml-1">
             '26
           </div>
         </div>
-        <div className="text-white text-left text-sm">Computer Science</div>
+        <div className="text-white text-left text-sm">
+          GPA: 3.91 <br /> Computer Science
+        </div>
       </div>
-      <div className="w-1/2 h-full">
-        <ul className="text-white text-sm text-right">
-          <li>Algorithms</li>
-          <li>Data Structures</li>
-          <li>Database Systems</li>
-          <li>Probability & Statistics</li>
-          <li>Computer Architecture</li>
-        </ul>
+    </div>
+  );
+}
+
+function Reminder() {
+  const courses = [
+    { value: "opt-1", title: "Algorithms" },
+    { value: "opt-2", title: "Data Structures" },
+    { value: "opt-3", title: "Database Systems" },
+    { value: "opt-4", title: "Probability & Stats" },
+  ];
+  return (
+    <div className="flex flex-col widget-background p-[1rem] pr-0 widget-sm">
+      <div className="w-full text-[#f59a30] font-semibold text-sm mb-2">
+        Coursework
       </div>
+      <RadioGroup defaultValue="opt-1">
+        {courses.map((course, idx) => (
+          <div className="flex flex-col">
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem
+                className="radio-checked border-[#cbcbcb] border-2"
+                value={course.value}
+                id={course.value}
+              />
+              <Label className="font-normal text-xs" htmlFor={course.value}>
+                {course.title}
+              </Label>
+            </div>
+            {idx !== courses.length - 1 && (
+              <hr className="border-dotted border-[#d9d9d9] ml-6 mr-4 mt-1" />
+            )}
+          </div>
+        ))}
+      </RadioGroup>
     </div>
   );
 }
@@ -78,7 +108,7 @@ function Photos() {
 
   return (
     <Carousel
-      className="flex widget-background relative overflow-hidden"
+      className="flex widget-background widget-med relative overflow-hidden"
       plugins={[
         Autoplay({
           delay: 4000,
