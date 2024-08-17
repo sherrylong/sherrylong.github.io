@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/carousel";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Autoplay from "embla-carousel-autoplay";
 import uiucBackground from "../assets/uiuc-background.jpeg";
 import accentureBackground from "../assets/accenture-background.jpeg";
