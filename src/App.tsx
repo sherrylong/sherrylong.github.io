@@ -8,7 +8,7 @@ function App() {
   return (
     <div
       id="wallpaper"
-      className="px-[1rem] sm:px-[3rem]"
+      className="px-[1rem] sm:px-[3rem] bg-left sm:bg-bottom"
       style={{ backgroundImage: `url(${Wallpaper})` }}
     >
       <div className="flex w-full h-full justify-center sm:justify-between">
@@ -16,7 +16,7 @@ function App() {
           <div className="hidden sm:block">
             <DigitalClock />
           </div>
-          <div className="sm:hidden" id="sm-hello-message">
+          <div className="sm:hidden -mt-4 -mb-2" id="sm-hello-message">
             <h1>Sherry Long</h1>
           </div>
           <div className="flex gap-[1rem]">
