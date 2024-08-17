@@ -6,21 +6,31 @@ import "./App.css";
 
 function App() {
   return (
-    <div id="wallpaper" style={{ backgroundImage: `url(${Wallpaper})` }}>
-      <div className="flex">
+    <div
+      id="wallpaper"
+      className="px-[1rem] sm:px-[3rem]"
+      style={{ backgroundImage: `url(${Wallpaper})` }}
+    >
+      <div className="flex w-full h-full justify-center sm:justify-between">
         <div id="widget-container">
-          <DigitalClock />
+          <div className="hidden sm:block">
+            <DigitalClock />
+          </div>
+          <div className="sm:hidden" id="sm-hello-message">
+            <h1>Sherry Long</h1>
+          </div>
           <div className="flex gap-[1rem]">
             <Widget app="weather"></Widget>
             <Widget app="reminder"></Widget>
           </div>
-          {/* <Widget app="weather"></Widget> */}
           <Widget app="photos"></Widget>
+          <Widget app="email"></Widget>
         </div>
-        <div className="flex w-full justify-end">
-          <div id="hello-message">
-            <h1>Sherry Long</h1>
-          </div>
+        <div id="lg-hello-message" className="hidden sm:flex">
+          <h1>
+            Sherry <br />
+            Long
+          </h1>
         </div>
       </div>
       <div className="fixed bottom-4 flex justify-center items-center w-full">

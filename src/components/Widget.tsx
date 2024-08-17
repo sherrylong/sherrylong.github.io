@@ -8,11 +8,13 @@ import {
 } from "@/components/ui/carousel";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Autoplay from "embla-carousel-autoplay";
 import uiucBackground from "../assets/uiuc-background.jpeg";
 import accentureBackground from "../assets/accenture-background.jpeg";
 import lbnlBackground from "../assets/lbnl-background.jpeg";
 import nasaBackground from "../assets/nasa-background.png";
+import { LuPencil } from "react-icons/lu";
 
 interface WidgetProps {
   app: string;
@@ -24,6 +26,7 @@ const Widget: React.FC<WidgetProps> = ({ app }) => {
       {app == "reminder" && <Reminder />}
       {app == "weather" && <Weather />}
       {app == "photos" && <Photos />}
+      {app == "email" && <Email />}
     </div>
   );
 };
@@ -134,5 +137,39 @@ function Photos() {
       <CarouselPrevious className="carousel-arrows left-0 bg-transparent" />
       <CarouselNext className="carousel-arrows right-0 bg-transparent" />
     </Carousel>
+  );
+}
+
+function Email() {
+  const projects = [
+    {
+      title: "Six Degrees",
+      description: "Your social network. Your social media.",
+    },
+    {
+      title: "Rembrandt",
+      description: "DALL-E, styled for your brand.",
+    },
+    { title: "Portfolio", description: "Looks familiar!" },
+  ];
+  return (
+    <div className="flex widget-background widget-med bg-[#f9f9f9] p-[1rem]">
+      <div className="flex flex-col justify-between">
+        <div className="bg-[#89CC04] w-[2rem] h-[2rem] rounded-full flex items-center justify-center font-bold text-sm">
+          SL
+        </div>
+        <div className="bg-white w-[2.5rem] h-[2.5rem] rounded-full flex items-center justify-center">
+          <LuPencil className="h-[1.2rem] w-[1.2rem] text-[#d4311f]" />
+        </div>
+      </div>
+      <div className="flex flex-col w-full ml-[1.7rem] gap-[0.2rem]">
+        {projects.map((project) => (
+          <div className="email-background flex flex-col text-xs">
+            <div className="font-semibold">{project.title}</div>
+            <div className="text-[#7a7b7d]">{project.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

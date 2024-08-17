@@ -50,3 +50,12 @@
   fill: #f59a30;
   stroke: #f59a30;
 }
+
+.email-background {
+  background-color: white;
+  height: 3rem;
+  border-radius: 10px;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+  justify-content: center;
+}
